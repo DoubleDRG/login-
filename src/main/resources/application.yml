@@ -1,0 +1,12 @@
+login:
+  kakao:
+    auth_url: https://kauth.kakao.com/oauth/authorize
+    client_id: 396ca2de5e86b0bc16a9cb39ca5945a4
+    redirect_uri: http://localhost:8080/kakao/redirect
+    response_type: code
+
+    token_url: https://kauth.kakao.com/oauth/token
+    grant_type: authorization_code
+
+    user_info_url: https://kapi.kakao.com/v2/user/me
+    authorization: Bearer
