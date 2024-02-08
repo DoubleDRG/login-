@@ -1,4 +1,4 @@
-package study.login.config.auth;
+package study.login.config.login;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;

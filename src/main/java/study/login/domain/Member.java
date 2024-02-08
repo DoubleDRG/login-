@@ -13,13 +13,15 @@ public class Member
     private String loginId;
     private String password;
     private String username;
+    private Platform platform;
 
-    public static Member createMember(String loginId, String password, String username)
+    public static Member createMember(String loginId, String password, String username, Platform platform)
     {
         Member member = new Member();
         member.loginId = loginId;
         member.password = password;
         member.username = username;
+        member.platform = platform;
         return member;
     }
 

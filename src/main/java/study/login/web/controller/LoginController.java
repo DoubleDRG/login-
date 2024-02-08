@@ -9,7 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import study.login.config.auth.SessionConst;
+import study.login.config.login.Login;
+import study.login.config.login.SessionConst;
 import study.login.domain.Member;
 import study.login.web.controller.form.LoginForm;
 import study.login.web.service.LoginService;
@@ -23,7 +24,7 @@ public class LoginController
     @GetMapping("/login")
     public String loginForm(@ModelAttribute("form") LoginForm form)
     {
-        return "loginForm";
+        return "/login/loginForm";
     }
 
     @PostMapping("/login")
@@ -33,7 +34,7 @@ public class LoginController
     {
         if (bindingResult.hasErrors())
         {
-            return "loginForm";
+            return "/login/loginForm";
         }
 
         Member loginMember = loginService.login(form.getLoginId(), form.getPassword());
@@ -41,12 +42,13 @@ public class LoginController
         if (loginMember == null)
         {
             bindingResult.reject("loginFail", "아이디 혹은 비밀번호가 잘못되었습니다.");
-            return "loginForm";
+            return "/login/loginForm";
         }
 
         HttpSession session = request.getSession();
         session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
-        return "redirect:/main";
+
+        return "redirect:/main/1";
     }
 
     @GetMapping("/logout")

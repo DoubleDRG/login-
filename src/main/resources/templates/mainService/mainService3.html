@@ -15,15 +15,16 @@
         <h1>로그인 완료</h1>
     </div>
     <div class="card p-3">
-        <h4 th:text="|${member.username}님|"></h4>
-        <p>메인서비스2 화면 입니다.</p>
+        <h4 th:text="|${member.username}님|">(사용자)님</h4>
+        <p>메인서비스3 화면 입니다.</p>
         <p>이 부분에 다른 서비스 화면을 보여주면 됩니다.</p>
     </div>
     <div>
-        <a class="btn btn-primary mt-3" href="/main">메인 서비스1로 이동</a>
-        <a class="btn btn-primary mt-3" href="/main/3">메인 서비스3로 이동</a>
+        <a class="btn btn-primary mt-3" href="/main/1">메인 서비스1로 이동</a>
+        <a class="btn btn-primary mt-3" href="/main/2">메인 서비스2로 이동</a>
     </div>
-    <a class="btn btn-secondary mt-3" href="/logout">로그아웃</a>
+    <a th:if="${member.platform == T(study.login.domain.Platform).NORMAL}" class="btn btn-secondary mt-3" href="/logout">로그아웃</a>
+    <a th:if="${member.platform == T(study.login.domain.Platform).KAKAO}" class="btn btn-secondary mt-3" href="/kakao/logout">카카오 로그아웃</a>
 </div>
 </body>
 </html>

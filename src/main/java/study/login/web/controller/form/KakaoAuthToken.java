@@ -1,9 +1,7 @@
 package study.login.web.controller.form;
 
 import lombok.Data;
-import lombok.ToString;
 
-@ToString
 @Data
 public class KakaoAuthToken
 {

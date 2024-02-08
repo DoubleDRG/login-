@@ -1,4 +1,4 @@
-package study.login.config.auth;
+package study.login.config.login;
 
 public abstract class SessionConst
 {

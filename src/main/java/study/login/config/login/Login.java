@@ -1,7 +1,6 @@
-package study.login.config.auth;
+package study.login.config.login;
 
 import org.springframework.aot.hint.annotation.Reflective;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

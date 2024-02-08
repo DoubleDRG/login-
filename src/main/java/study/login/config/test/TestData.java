@@ -1,10 +1,11 @@
-package study.login.datainit;
+package study.login.config.test;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import study.login.domain.Member;
 import study.login.domain.MemberRepository;
+import study.login.domain.Platform;
 
 import static study.login.domain.Member.*;
 
@@ -17,7 +18,7 @@ public class TestData
     @PostConstruct
     public void init()
     {
-        Member member = createMember("test", "test", "Test Member");
+        Member member = createMember("test", "test!!", "테스트 회원", Platform.NORMAL);
         memberRepository.save(member);
     }
 }
